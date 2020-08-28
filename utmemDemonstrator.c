@@ -70,6 +70,6 @@ int main (){
   printf("Returned value size: %d\n",(int) *tmem_request2.get.value_lenp);
   printf("Returned value %d\n",* (int*) tmem_request2.get.value);
 
-  close(fd)
+  close(fd);
   return 0;
 }
