@@ -27,7 +27,7 @@ int main (){
   printf("My pid is %d\n",pid);
   printf("PUT: key:%d value:%d\n",pid,number);
 
-  int fd=open(TMEM_PATH,O_RDWR);
+  int fd=open(TMEM_PATH,O_WRONLY);
   printf("%sOpened %s %d %s\n",SP1,TMEM_PATH,fd,SP2);
 
   void *key=&pid;
