@@ -27,7 +27,7 @@ int main (){
   printf("My pid is %d\n",pid);
   printf("PUT: key:%d value:%d\n",pid,number);
 
-  //int fd=open(TMEM_PATH,O_RDONLY);
+  int fd=open(TMEM_PATH,O_RDONLY);
   printf("%sOpened %s %s\n",SP1,TMEM_PATH,SP2);
 
   void *key=&pid;
@@ -69,5 +69,7 @@ int main (){
 
   printf("Returned value size: %d\n",(int) *tmem_request2.get.value_lenp);
   printf("Returned value %d\n",* (int*) tmem_request2.get.value);
+
+  close(fd)
   return 0;
 }
