@@ -28,7 +28,7 @@ int main (){
   printf("PUT: key:%d value:%d\n",pid,number);
 
   int fd=open(TMEM_PATH,O_RDONLY);
-  printf("%sOpened %s %s\n",SP1,TMEM_PATH,SP2);
+  printf("%sOpened %s %d %s\n",SP1,fd,TMEM_PATH,SP2);
 
   void *key=&pid;
   size_t key_len=sizeof(pid);
