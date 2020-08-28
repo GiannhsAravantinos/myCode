@@ -50,7 +50,7 @@ int main (){
 
   printf("%sWill now make a PUT request%s\n",SP1,SP2);
   ret = ioctl(fd, TMEM_PUT, &tmem_request1);
-  if (ret){printf("ERROR!\n");return 0;}
+  if (ret){printf("ERROR! %d\n",ret);return 0;}
 
   size_t a=101;
   size_t *value_lenp=&a;
@@ -68,7 +68,7 @@ int main (){
 
   printf("%sWill now make a GET request%s\n",SP1,SP2);
   ret = ioctl(fd, TMEM_GET, &tmem_request2);
-  if (ret){printf("ERROR!\n");return 0;}
+  if (ret){printf("ERROR! %d\n",ret);return 0;}
 
   printf("Returned value size: %d\n",(int) *tmem_request2.get.value_lenp);
   printf("Returned value %d\n",* (int*) tmem_request2.get.value);
