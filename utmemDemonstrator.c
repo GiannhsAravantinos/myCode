@@ -55,10 +55,13 @@ int main (){
 
   size_t a=101;
   size_t *value_lenp=&a;
+  int b=101;
+  void *val2=&b;
+
   struct tmem_get_request tmem_get_request = {
       .key = key,
       .key_len = key_len,
-      .value = value,
+      .value = val2,
       .value_lenp = value_lenp,
   };
 
