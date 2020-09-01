@@ -29,6 +29,7 @@ int main (){
 
   int fd=open(TMEM_PATH,O_WRONLY);
   printf("%sOpened %s %d %s\n",SP1,TMEM_PATH,fd,SP2);
+  if (fd<0){printf("ERROR! %d\n",fd);return 0;}
 
   void *key=&pid;
   size_t key_len=sizeof(pid);
